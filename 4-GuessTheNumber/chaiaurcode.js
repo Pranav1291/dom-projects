@@ -1,3 +1,4 @@
+
 let randomNumber = parseInt(Math.random() * 100 + 1);
 
 const submit = document.querySelector('#subt');
@@ -16,7 +17,7 @@ let playGame = true;
 
 if (playGame) {
   submit.addEventListener('click', function (e) {
-    e.preventDefault();
+    e.preventDefault();    //click hote hi default value hta do
     const guess = parseInt(userInput.value);
     console.log(guess);
     validateGuess(guess);
@@ -84,9 +85,9 @@ function newGame() {
 function endGame() {
   userInput.value = '';
   userInput.setAttribute('disabled', '');
-  p.classList.add('button');
+  p.classList.add('button');   //representing the contents of the element's class attribute. If the class attribute is not set or empty, it returns an empty DOMTokenList, i.e. a DOMTokenList with the length property equal to 0.Although the classList property itself is read-only, you can modify its associated DOMTokenList using the add(), remove(), replace(), and toggle() methods.
   p.innerHTML = `<h2 id="newGame">Start new Game</h2>`;
-  startOver.appendChild(p);
+  startOver.appendChild(p);  //appendChild() method of the Node interface adds a node to the end of the list of children of a specified parent node.
   playGame = false;
   newGame();
 
